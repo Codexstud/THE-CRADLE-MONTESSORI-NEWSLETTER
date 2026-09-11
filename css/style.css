@@ -6809,107 +6809,400 @@ img {
 }
 
 
-/* CHART */
+/* =========================================================
+   MIDDLE BASIC ASSESSMENT
+========================================================= */
 
-.assessment-chart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.assessment-results {
+    width: 100%;
 
+    margin-top: 55px;
 
-.pie-chart {
-    position: relative;
+    padding: 55px;
 
-    width: 330px;
-    height: 330px;
+    background: #ffffff;
 
-    border-radius: 50%;
-
-    /*
-       95.7% Credit
-       4.3% Distinction
-    */
-
-    background:
-        conic-gradient(
-            #287db5 0deg 344.52deg,
-            #ff8514 344.52deg 360deg
-        );
+    border: 1px solid #d9dee7;
 
     box-shadow:
-        0 20px 45px rgba(16, 32, 68, .15);
+        0 25px 60px rgba(16, 32, 68, .10);
 
-    animation: pieChartReveal 1.4s var(--ease-soft) forwards;
-
-    transform: scale(.7);
-    opacity: 0;
+    overflow: hidden;
 }
 
 
-@keyframes pieChartReveal {
+/* =========================================================
+   HEADING
+========================================================= */
+
+.assessment-results-heading {
+    max-width: 850px;
+
+    margin-bottom: 45px;
+}
+
+
+.assessment-results-heading > span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    color: #8d0b12;
+}
+
+
+.assessment-results-heading h4 {
+    margin: 0 0 15px;
+
+    font-family: var(--font-display);
+
+    font-size: clamp(34px, 4vw, 48px);
+
+    line-height: 1.05;
+
+    color: #102044;
+}
+
+
+.assessment-results-heading p {
+    margin: 0;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    color: #596579;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   PERFORMANCE BAR
+========================================================= */
+
+.performance-bar-wrapper {
+    width: 100%;
+
+    margin-bottom: 45px;
+}
+
+
+.performance-labels {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 12px;
+}
+
+
+.performance-labels div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.performance-labels div:last-child {
+    text-align: right;
+}
+
+
+.performance-labels strong {
+    font-size: 16px;
+
+    color: #102044;
+}
+
+
+.performance-labels span {
+    font-family: var(--font-display);
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    color: #8d0b12;
+}
+
+
+.performance-labels div:last-child span {
+    color: #e67a00;
+}
+
+
+/* =========================================================
+   BAR
+========================================================= */
+
+.performance-bar {
+    display: flex;
+
+    width: 100%;
+
+    height: 48px;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    background: #e9edf2;
+
+    box-shadow:
+        inset 0 2px 5px rgba(0,0,0,.08);
+}
+
+
+.credit-bar {
+    position: relative;
+
+    width: 95.7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    padding-right: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #102044,
+            #287db5
+        );
+
+    animation:
+        creditBarReveal 1.3s var(--ease-soft) forwards;
+
+    transform-origin: left;
+}
+
+
+.distinction-bar {
+    position: relative;
+
+    width: 4.3%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e67a00,
+            #ffb52e
+        );
+
+    animation:
+        distinctionBarReveal 1.3s var(--ease-soft) .15s forwards;
+
+    transform-origin: left;
+}
+
+
+.credit-bar span,
+.distinction-bar span {
+    font-size: 12px;
+
+    font-weight: 800;
+
+    color: #ffffff;
+
+    white-space: nowrap;
+}
+
+
+@keyframes creditBarReveal {
 
     from {
-        transform: scale(.7) rotate(-20deg);
-        opacity: 0;
+        transform: scaleX(0);
     }
 
     to {
-        transform: scale(1) rotate(0deg);
-        opacity: 1;
+        transform: scaleX(1);
     }
 
 }
 
 
-/* Percentage labels */
+@keyframes distinctionBarReveal {
+
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+
+}
+
 
 /* =========================================================
-   PIE CHART PERCENTAGE LABELS
+   STAT CARDS
 ========================================================= */
 
-.credit-percent,
-.distinction-percent {
-    position: absolute;
+.assessment-stat-cards {
+    display: grid;
 
-    font-family: var(--font-body);
-    font-weight: 700;
+    grid-template-columns: repeat(2, 1fr);
 
-    color: #101010;
-
-    z-index: 2;
+    gap: 18px;
 }
 
 
-/* 95.7% sits in the large blue area */
+.assessment-stat {
+    position: relative;
 
-.credit-percent {
-    left: 50%;
-    top: 65%;
+    padding: 28px 30px;
 
-    transform: translate(-50%, -50%);
+    border: 1px solid #dce1e8;
 
-    font-size: 16px;
+    background: #f8f9fb;
+
+    overflow: hidden;
+
+    transition:
+        transform .4s var(--ease-soft),
+        box-shadow .4s ease;
 }
 
 
-/* 4.3% sits inside the small orange slice */
+.assessment-stat:hover {
+    transform: translateY(-6px);
 
-.distinction-percent {
+    box-shadow:
+        0 15px 35px rgba(16,32,68,.10);
+}
+
+
+.assessment-stat::before {
+    content: "";
+
     position: absolute;
 
-    top: 20%;
-    right: 43%;
+    left: 0;
+    top: 0;
 
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 700;
+    width: 5px;
+    height: 100%;
+}
 
-    color: #101010;
 
-    z-index: 3;
+.credit-stat::before {
+    background: #287db5;
+}
 
-    transform: translate(-50%, -50%);
+
+.distinction-stat::before {
+    background: #e67a00;
+}
+
+
+.stat-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #68758b;
+}
+
+
+.assessment-stat strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-family: var(--font-display);
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    color: #102044;
+}
+
+
+.distinction-stat strong {
+    color: #e67a00;
+}
+
+
+.assessment-stat p {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    color: #68758b;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .assessment-results {
+        padding: 35px 22px;
+    }
+
+
+    .assessment-results-heading h4 {
+        font-size: 36px;
+    }
+
+
+    .assessment-results-heading p {
+        font-size: 18px;
+    }
+
+
+    .performance-bar {
+        height: 42px;
+    }
+
+
+    .credit-bar {
+        padding-right: 10px;
+    }
+
+
+    .distinction-bar span {
+        display: none;
+    }
+
+
+    .assessment-stat-cards {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 /* =========================================================
