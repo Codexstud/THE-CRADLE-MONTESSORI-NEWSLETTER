@@ -10042,14 +10042,14 @@ img {
 
 section p,
 article p {
-    font-size: clamp(18px, 1.35vw, 21px) !important;
+    font-size: clamp(22px, 1.35vw, 22px) !important;
     line-height: 1.8 !important;
     text-align: justify;
 }
 
 section small,
 article small {
-    font-size: 14px !important;
+    font-size: 16px !important;
     line-height: 1.5;
 }
 
@@ -10057,7 +10057,7 @@ section .activity-label,
 section .session-kicker,
 section .events-label,
 section .hair-tag {
-    font-size: 13px !important;
+    font-size: 15px !important;
 }
 
 
