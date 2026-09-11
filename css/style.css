@@ -9742,3 +9742,41 @@ img {
     }
 
 }
+
+/* =========================================================
+   FINAL NEWSLETTER TYPOGRAPHY OVERRIDE
+========================================================= */
+
+section p,
+article p {
+    font-size: clamp(18px, 1.35vw, 21px) !important;
+    line-height: 1.8 !important;
+    text-align: justify;
+}
+
+section small,
+article small {
+    font-size: 14px !important;
+    line-height: 1.5;
+}
+
+section .activity-label,
+section .session-kicker,
+section .events-label,
+section .hair-tag {
+    font-size: 13px !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    section p,
+    article p {
+        font-size: 18px !important;
+        line-height: 1.75 !important;
+        text-align: justify;
+    }
+
+}
