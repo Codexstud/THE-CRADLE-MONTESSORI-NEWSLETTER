@@ -6592,7 +6592,7 @@ img {
 
 
 .birthday-content .subsection-tag {
-    color: #ffcf69;
+    color: #fcfcfb;
 }
 
 
@@ -6627,7 +6627,7 @@ img {
 
 
 .birthday-rule span {
-    font-size: 11px;
+    font-size: 15px;
     letter-spacing: 3px;
 }
 
@@ -6636,14 +6636,14 @@ img {
     margin: 5px 0;
 
     font-family: var(--font-display);
-    font-size: 32px;
+    font-size: 35px;
 
-    color: #ffcf69;
+    color: #f8f7f6;
 }
 
 
 .birthday-rule small {
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 2px;
 }
 
@@ -6656,7 +6656,7 @@ img {
 
     background: #8d0b12;
 
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 800;
     letter-spacing: 1px;
 }
